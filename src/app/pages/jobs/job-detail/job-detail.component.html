@@ -1,0 +1,74 @@
+<!-- Job Detail Page -->
+<div *ngIf="job; else notFound">
+
+  <!-- Hero Banner -->
+  <section class="hero-banner">
+    <div class="container">
+      <h1>{{ job.title }}</h1>
+    </div>
+  </section>
+
+  <!-- Meta Info Row -->
+  <div class="meta-row">
+    <div class="container">
+      <span class="meta-item">
+        <i class="fas fa-building"></i> {{ job.department }}
+      </span>
+      <span class="meta-item">
+        <i class="fas fa-map-marker-alt"></i> {{ job.location }}
+      </span>
+      <span class="meta-item">
+        <span class="badge badge-type">{{ job.type }}</span>
+      </span>
+      <span class="meta-item">
+        <i class="fas fa-calendar-alt"></i> Posted {{ job.postedDate }}
+      </span>
+    </div>
+  </div>
+
+  <!-- Content -->
+  <div class="container py-5">
+
+    <!-- Job Description -->
+    <div class="content-section">
+      <h2 class="section-title">Job Description</h2>
+      <p>{{ job.description }}</p>
+    </div>
+
+    <!-- Requirements -->
+    <div class="content-section">
+      <h2 class="section-title">Requirements</h2>
+      <ul>
+        <li *ngFor="let req of job.requirements">{{ req }}</li>
+      </ul>
+    </div>
+
+    <!-- Responsibilities -->
+    <div class="content-section">
+      <h2 class="section-title">Responsibilities</h2>
+      <ul>
+        <li *ngFor="let resp of job.responsibilities">{{ resp }}</li>
+      </ul>
+    </div>
+
+    <!-- Actions -->
+    <div class="d-flex align-items-center gap-3 mt-4">
+      <button class="btn btn-apply">Apply for this Position</button>
+      <a routerLink="/jobs" class="back-link">
+        <i class="fas fa-arrow-left"></i> Back to Jobs
+      </a>
+    </div>
+
+  </div>
+</div>
+
+<!-- Not Found -->
+<ng-template #notFound>
+  <div class="not-found">
+    <h2>Job Not Found</h2>
+    <p>The job you are looking for does not exist or has been removed.</p>
+    <a routerLink="/jobs" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Jobs
+    </a>
+  </div>
+</ng-template>

@@ -1,0 +1,59 @@
+<!-- Hero Banner -->
+<section class="hero-banner d-flex align-items-center justify-content-center text-center text-white">
+  <div class="container">
+    <h1 class="display-3 fw-bold mb-3">How It Works</h1>
+    <p class="lead mb-0">Your journey to finding the perfect professional, simplified.</p>
+  </div>
+</section>
+
+<!-- Steps Timeline -->
+<section class="timeline-section py-5">
+  <div class="container">
+    <div class="timeline-wrapper position-relative">
+      <!-- Vertical line -->
+      <div class="timeline-line d-none d-md-block"></div>
+
+      <div class="row gy-5" *ngFor="let step of steps; let i = index">
+        <!-- Left content (even steps) / empty (odd steps) on desktop -->
+        <div class="col-md-5 d-flex"
+             [ngClass]="{ 'order-md-1 justify-content-end text-md-end': i % 2 === 0, 'order-md-3 justify-content-start text-md-start': i % 2 !== 0 }">
+          <div class="step-card" *ngIf="i % 2 === 0">
+            <ng-container *ngTemplateOutlet="stepContent; context: { $implicit: step }"></ng-container>
+          </div>
+          <div class="step-card" *ngIf="i % 2 !== 0">
+            <ng-container *ngTemplateOutlet="stepContent; context: { $implicit: step }"></ng-container>
+          </div>
+        </div>
+
+        <!-- Center icon -->
+        <div class="col-md-2 order-md-2 d-flex justify-content-center">
+          <div class="step-icon-wrapper">
+            <span class="step-number">{{ step.number }}</span>
+            <div class="step-icon" [style.background-color]="step.iconBg">
+              <i class="fas" [ngClass]="step.icon"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right content (odd steps) / empty (even steps) on desktop -->
+        <div class="col-md-5 d-none d-md-block"
+             [ngClass]="{ 'order-md-3': i % 2 === 0, 'order-md-1': i % 2 !== 0 }">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Step content template -->
+<ng-template #stepContent let-step>
+  <h3 class="step-title fw-bold">{{ step.title }}</h3>
+  <p class="step-description text-muted">{{ step.description }}</p>
+</ng-template>
+
+<!-- CTA Section -->
+<section class="cta-section text-center text-white py-5">
+  <div class="container">
+    <h2 class="display-5 fw-bold mb-3">Right People. Right Support. Every Time.</h2>
+    <a routerLink="/contact" class="btn btn-cta btn-lg mt-3 px-5 py-3 fw-semibold">Get Started</a>
+  </div>
+</section>

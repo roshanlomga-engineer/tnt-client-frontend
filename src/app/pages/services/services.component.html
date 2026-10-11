@@ -1,0 +1,51 @@
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <div class="container">
+    <h1>Our Services</h1>
+    <p>Reliable, verified, and professional staffing solutions for households and businesses across India.</p>
+  </div>
+</section>
+
+<!-- For Households -->
+<section class="households-section">
+  <div class="container">
+    <div class="text-center">
+      <div class="divider-line"></div>
+      <h2 class="section-title">For Households</h2>
+      <p class="section-subtitle">Trusted domestic help to make your everyday life easier.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let service of householdServices; let i = index">
+        <div class="service-card">
+          <div class="icon-circle" [ngClass]="getIconColor(i)">
+            <i class="fas" [ngClass]="service.icon"></i>
+          </div>
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- For Businesses -->
+<section class="businesses-section">
+  <div class="container">
+    <div class="text-center">
+      <div class="divider-line"></div>
+      <h2 class="section-title">For Businesses</h2>
+      <p class="section-subtitle">Scalable and professional staffing to power your operations.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-md-4 col-lg-3" *ngFor="let service of businessServices; let i = index">
+        <div class="service-card">
+          <div class="icon-circle" [ngClass]="getIconColor(i)">
+            <i class="fas" [ngClass]="service.icon"></i>
+          </div>
+          <h5>{{ service.title }}</h5>
+          <p>{{ service.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

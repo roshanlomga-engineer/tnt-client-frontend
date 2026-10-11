@@ -1,0 +1,60 @@
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Company Info -->
+      <div class="col-lg-3 col-md-6">
+        <div class="footer-brand">T&amp;T Manpower Services</div>
+        <p class="footer-tagline">Right People. Right Support. Every Time.</p>
+        <div class="social-icons">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Quick Links</h5>
+        <ul class="footer-links">
+          <li *ngFor="let link of quickLinks">
+            <a [routerLink]="link.path">{{ link.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Services</h5>
+        <ul class="footer-links">
+          <li *ngFor="let service of services">
+            <a [routerLink]="service.path">{{ service.label }}</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="col-lg-3 col-md-6">
+        <h5 class="footer-heading">Contact</h5>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>+91 7483843405</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>Ttmanpowerservices&#64;gmail.com</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <span>Bangalore, Karnataka</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="container">
+      &copy; 2024 T&amp;T Manpower Services. All rights reserved.
+    </div>
+  </div>
+</footer>

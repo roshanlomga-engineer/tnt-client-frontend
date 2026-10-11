@@ -1,0 +1,120 @@
+<!-- Hero Banner -->
+<section class="hero-banner">
+  <div class="container">
+    <h1>Contact Us</h1>
+    <p>We'd love to hear from you. Reach out to us for any inquiries or support.</p>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="contact-section">
+  <div class="container">
+    <div class="row g-4">
+      <!-- Contact Form -->
+      <div class="col-lg-7">
+        <div class="contact-form-card">
+          <h3>Send Us a Message</h3>
+          <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+            <div class="mb-3">
+              <label class="form-label">Name <span class="text-danger">*</span></label>
+              <input type="text" class="form-control" formControlName="name"
+                     [class.is-invalid]="f['name'].touched && f['name'].invalid"
+                     placeholder="Your full name">
+              <div *ngIf="f['name'].touched && f['name'].errors?.['required']" class="invalid-feedback">
+                Name is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Email <span class="text-danger">*</span></label>
+              <input type="email" class="form-control" formControlName="email"
+                     [class.is-invalid]="f['email'].touched && f['email'].invalid"
+                     placeholder="you@example.com">
+              <div *ngIf="f['email'].touched && f['email'].errors?.['required']" class="invalid-feedback">
+                Email is required.
+              </div>
+              <div *ngIf="f['email'].touched && f['email'].errors?.['email']" class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Phone <span class="text-danger">*</span></label>
+              <input type="tel" class="form-control" formControlName="phone"
+                     [class.is-invalid]="f['phone'].touched && f['phone'].invalid"
+                     placeholder="+91-XXXXXXXXXX">
+              <div *ngIf="f['phone'].touched && f['phone'].errors?.['required']" class="invalid-feedback">
+                Phone number is required.
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label class="form-label">Service Type <span class="text-danger">*</span></label>
+              <select class="form-select" formControlName="serviceType"
+                      [class.is-invalid]="f['serviceType'].touched && f['serviceType'].invalid">
+                <option value="" disabled>Select a service</option>
+                <option *ngFor="let service of serviceTypes" [value]="service">{{ service }}</option>
+              </select>
+              <div *ngIf="f['serviceType'].touched && f['serviceType'].errors?.['required']" class="invalid-feedback">
+                Please select a service type.
+              </div>
+            </div>
+
+            <div class="mb-4">
+              <label class="form-label">Message <span class="text-danger">*</span></label>
+              <textarea class="form-control" formControlName="message" rows="5"
+                        [class.is-invalid]="f['message'].touched && f['message'].invalid"
+                        placeholder="How can we help you?"></textarea>
+              <div *ngIf="f['message'].touched && f['message'].errors?.['required']" class="invalid-feedback">
+                Message is required.
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Contact Info Cards -->
+      <div class="col-lg-5">
+        <div class="info-card">
+          <div class="icon-circle">
+            <i class="fas fa-phone"></i>
+          </div>
+          <div>
+            <h5>Phone</h5>
+            <p><a href="tel:+91XXXXXXXXXX">+91-XXXXXXXXXX</a></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-circle">
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div>
+            <h5>Email</h5>
+            <p><a href="mailto:info@tntmanpower.com">info&#64;tntmanpower.com</a></p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="icon-circle">
+            <i class="fas fa-map-marker-alt"></i>
+          </div>
+          <div>
+            <h5>Address</h5>
+            <p>Mumbai, Maharashtra, India</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Bottom Section -->
+<section class="bottom-section">
+  <div class="container">
+    <h4>T&amp;T Manpower Services</h4>
+    <p>Right People. Right Support. Every Time.</p>
+  </div>
+</section>

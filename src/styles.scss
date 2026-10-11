@@ -1,0 +1,191 @@
+// Bootstrap SCSS
+@import 'bootstrap/scss/bootstrap';
+
+// ============================================================
+// CSS Custom Properties (Brand Colors)
+// ============================================================
+:root {
+  --color-primary: #1B3A5C;
+  --color-secondary: #E8A838;
+  --color-accent: #2E7D52;
+  --color-light: #F8F9FA;
+  --color-dark: #1A1A2E;
+}
+
+// ============================================================
+// Base / Reset
+// ============================================================
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--color-dark);
+  background-color: #fff;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: var(--color-primary);
+
+  &:hover {
+    color: var(--color-secondary);
+  }
+}
+
+// ============================================================
+// Custom Buttons
+// ============================================================
+.btn-primary {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#1B3A5C, 8%);
+    border-color: darken(#1B3A5C, 8%);
+    color: #fff;
+  }
+}
+
+.btn-secondary {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-dark);
+
+  &:hover,
+  &:focus {
+    background-color: darken(#E8A838, 8%);
+    border-color: darken(#E8A838, 8%);
+    color: var(--color-dark);
+  }
+}
+
+.btn-accent {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+
+  &:hover,
+  &:focus {
+    background-color: darken(#2E7D52, 8%);
+    border-color: darken(#2E7D52, 8%);
+    color: #fff;
+  }
+}
+
+// ============================================================
+// Section Spacing Utilities
+// ============================================================
+.section-padding {
+  padding: 5rem 0;
+}
+
+.section-padding-sm {
+  padding: 3rem 0;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin-bottom: 1rem;
+}
+
+.section-subtitle {
+  font-size: 1.125rem;
+  color: #6c757d;
+  margin-bottom: 3rem;
+}
+
+// ============================================================
+// Hero Section
+// ============================================================
+.hero-section {
+  position: relative;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(27, 58, 92, 0.9) 0%,
+      rgba(26, 26, 46, 0.7) 100%
+    );
+    z-index: 1;
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+  }
+}
+
+// ============================================================
+// Card Hover Effects
+// ============================================================
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: none;
+  border-radius: 0.75rem;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  }
+}
+
+// ============================================================
+// Footer
+// ============================================================
+.footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  padding: 3rem 0 1.5rem;
+
+  a {
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: var(--color-secondary);
+    }
+  }
+
+  .footer-heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+    color: #fff;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 1.5rem;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.875rem;
+    color: rgba(255, 255, 255, 0.5);
+  }
+}

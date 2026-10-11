@@ -1,0 +1,57 @@
+<!-- Hero Banner -->
+<section class="hero-banner text-white text-center d-flex align-items-center justify-content-center">
+  <div class="container">
+    <h1 class="display-3 fw-bold mb-3">Migrant Worker Support</h1>
+    <p class="lead fs-4">Dignity. Opportunity. Growth.</p>
+  </div>
+</section>
+
+<!-- Intro -->
+<section class="py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <p class="intro-text fs-5 lh-lg">
+          T&amp;T believes every worker deserves dignity, respect, and opportunity regardless of where they come from.
+          Our migrant support programs are designed to empower workers at every stage of their journey, ensuring
+          they have the resources, knowledge, and care they need to thrive in a new environment.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Support Initiative Cards -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center fw-bold mb-5 section-title">Our Support Initiatives</h2>
+    <div class="row g-4">
+      <div class="col-xl-3 col-lg-4 col-md-6" *ngFor="let card of supportCards">
+        <div class="card h-100 border-0 shadow-sm support-card text-center p-4">
+          <div class="card-body">
+            <div class="icon-circle mx-auto mb-3">
+              <i class="fas" [ngClass]="card.icon"></i>
+            </div>
+            <h5 class="card-title fw-bold mb-3">{{ card.title }}</h5>
+            <p class="card-text text-muted">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Closing Statement -->
+<section class="closing-section py-5">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <blockquote class="closing-quote">
+          <p class="fs-4 fw-semibold mb-0">
+            &ldquo;We don&rsquo;t just connect people with jobs. We help people build better lives.&rdquo;
+          </p>
+        </blockquote>
+      </div>
+    </div>
+  </div>
+</section>
